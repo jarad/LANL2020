@@ -37,3 +37,17 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+
+# LaTeX auxiliary variables
+*.tex
+*.log
+*.nav
+*.snm
+*.synctex.gz
+*.toc
+
+*.Rproj
+
+LANL2020.pdf
+

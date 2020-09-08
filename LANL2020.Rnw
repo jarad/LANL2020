@@ -1,0 +1,184 @@
+\documentclass[handout,10pt,aspectratio=43]{beamer}
+
+\usepackage{natbib}
+
+\usepackage{pdfpages}
+\usepackage[ruled,vlined,linesnumbered,resetcount]{algorithm2e}
+
+\usetheme{AnnArbor}
+\usecolortheme{beaver}
+
+\graphicspath{{include/}}
+
+\setlength{\unitlength}{\textwidth}  % measure in textwidths
+\usepackage[normalem]{ulem}
+
+% to avoid counting all pages
+\newcommand{\backupbegin}{
+   \newcounter{finalframe}
+   \setcounter{finalframe}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \setcounter{framenumber}{\value{finalframe}}
+}
+
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{enumerate subitem}{\alph{enumii}.}
+\setbeamertemplate{enumerate subsubitem}{\roman{enumiii}.}
+\setkeys{Gin}{width=0.6\textwidth}
+
+\newcommand{\I}{\mathrm{I}}
+\newcommand{\ind}{\stackrel{ind}{\sim}}
+\providecommand{\ov}[1]{\overline{#1}}
+\newcommand{\ubar}[1]{\text{\b{$#1$}}}
+
+\usefonttheme[onlymath]{serif} % uncomment for article style math
+
+\institute[ISU]{Iowa State University}
+\date{\today}
+
+\title[Emulation of APSIM]{Emulation of Agricultural Production Systems sIMulator (APSIM)}
+\author[Niemi, Damiano, Garton]{Jarad Niemi and Luis Damiano}
+
+
+
+<<options, results='hide', echo=FALSE, purl=FALSE>>=
+opts_chunk$set(comment=NA, 
+               fig.width=6, fig.height=5, 
+               size='tiny', 
+               out.width='0.8\\textwidth', 
+               fig.align='center', 
+               message = FALSE,
+               echo = FALSE,
+               cache = TRUE)
+options(width=120)
+@
+
+<<libraries, message=FALSE, warning=FALSE>>=
+library("tidyverse")
+library("mvtnorm")
+@
+
+<<set_seed, echo=FALSE>>=
+set.seed(20200109)
+@
+
+
+
+\begin{document}
+
+\begin{frame}
+\maketitle
+
+
+\vspace{0.2in} \pause
+
+{\footnotesize
+Funded, in part, by 
+\begin{itemize}
+\item[-] the Iowa State University Presidential Interdisciplinary 
+Research Initiative on C-CHANGE: Science for a Changing Agriculture
+\item[-] USDA NIFA CAP: \href{https://cris.nifa.usda.gov/cgi-bin/starfinder/0?path=fastlink1.txt&id=anon&pass=&search=R=88415&format=WEBLINK}{Consortium for Cultivating Human And Naturally reGenerative Enterprises (C-CHANGE)}
+\item[-] Foundation for Food and Agriculture Research: \href{https://foundationfar.org/2019/04/01/ffar-grant-improves-soil-health-and-increases-farm-sustainability/}{Prairie Strips for Healthy Soils and Thriving Farms}
+\end{itemize}
+}
+
+\end{frame}
+
+
+\section{C-CHANGE}
+\begin{frame}
+\frametitle{C-CHANGE}
+
+\end{frame}
+
+\subsection{Dead zone}
+\begin{frame}
+\frametitle{Negative aspects of farming}
+
+Dead zone in Gulf of Mexico
+
+\end{frame}
+
+
+\subsection{STRIPS}
+\begin{frame}
+\frametitle{STRIPS}
+\end{frame}
+
+
+\subsection{Biogas production}
+\begin{frame}
+\frametitle{USDA NIFA - Biogas production}
+\end{frame}
+
+
+\subsection{Computer models}
+\begin{frame}
+\frametitle{Computer models}
+
+\begin{itemize}
+\item \href{https://www.fs.usda.gov/ccrc/tools/watershed-erosion-prediction-project}{WEPP}
+\item \href{https://www.apsim.info/}{APSIM}
+\item \href{https://github.com/PSUmodeling/Cycles}{Cycles}
+\item others...
+\end{itemize}
+
+\end{frame}
+
+
+\section{APSIM}
+
+
+
+
+
+\begin{frame}
+\frametitle{Summary}
+
+One-at-a-time (OAT) knot selection
+\begin{itemize}
+\item Automatically selects the number of knots
+\item Similar predictive performance to simultaneous knot selection
+\item Better represents full GP compared to simultaneous knot selection
+\item Reduced runtimes compared to simultaneous knot selection
+\end{itemize}
+
+\vspace{0.1in}
+
+These slides are available at
+\begin{itemize}
+\item \url{https://github.com/jarad/LANL2020}
+\item \url{http://www.jarad.me/research/presentations.html}
+\end{itemize}
+
+\vspace{0.1in} 
+
+\begin{center}
+{\Large
+Thank you!
+}
+\end{center}
+
+Other links:
+\begin{itemize}
+\item http://www.jaradniemi.com/
+\item https://www.youtube.com/jaradniemi
+\item https://twitter.com/jaradniemi
+\end{itemize}
+\end{frame}
+
+\appendix
+\backupbegin
+
+\begin{frame}
+\frametitle{References}
+\scriptsize
+\bibliography{references}
+\bibliographystyle{plainnat}
+\end{frame}
+
+\end{document}
+
