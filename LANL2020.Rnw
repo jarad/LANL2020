@@ -146,11 +146,11 @@ set.seed(20200109)
   \end{figure}
 
   \begin{itemize}
-    \item Physical process based.
-    \item Peer-reviewed.
-    \item Flexible.
-    \item Calibrated for many different climates and countries.
-    \item Dedicated, funded team of software engineers working to improve it.
+    \item Physical process based
+    \item Peer-reviewed
+    \item Flexible
+    \item Calibrated for many different climates and countries
+    \item Dedicated, funded team of software engineers working to improve it
   \end{itemize}
 \end{frame}
 
@@ -159,18 +159,14 @@ set.seed(20200109)
   \framesubtitle{Goals}
 
   \begin{itemize}
-    \item Reduce to a relatively small number of inputs to guide field scientists.
-    \item Better understand computer model deficiencies: does APSIM emphasize on soil too much?
+    \item Variable selection: to guide data collection by field scientists.
     \item Model calibration: APSIM assumes a flat, uniform soil. TWI.
-    \item Uncertainty quantification: APSIM is deterministic
-    \item Provide on-line prediction for the final user.
+    \item Identify deficiencies: does APSIM emphasize on soil too much?
+    \item Uncertainty quantification: APSIM is deterministic, real life is not.
     \item Inform the development \& calibration of new crop modules (e.g. cover crops).
-    \item Assist agronomists in studying agronomic hypothesis.
+    \item Portability: web interface back end for on-line prediction.
+    \item Assist scientists in studying agronomic hypothesis.
   \end{itemize}
-
-  \begin{alertblock}{Conclusion}
-    Goals need to be more precise -- overlap with research questions?
-  \end{alertblock}
 \end{frame}
 
 \begin{frame}
