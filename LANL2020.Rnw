@@ -1,4 +1,4 @@
-\documentclass[handout,10pt,aspectratio=43]{beamer}
+\documentclass[handout,10pt,aspectratio=169]{beamer}
 \usepackage{natbib}
 \usepackage{pdfpages}
 \usepackage[ruled,vlined,linesnumbered,resetcount]{algorithm2e}
@@ -22,8 +22,8 @@
 
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{itemize items}[default]
-\setbeamertemplate{itemize subitem}{\alph{enumii}.}
-\setbeamertemplate{itemize subsubitem}{\roman{enumiii}.}
+% \setbeamertemplate{itemize subitem}{\alph{enumii}.}
+% \setbeamertemplate{itemize subsubitem}{\roman{enumiii}.}
 \setkeys{Gin}{width=0.6\textwidth}
 
 \newcommand{\I}{\mathrm{I}}
@@ -84,38 +84,172 @@ set.seed(20200109)
 \section{C-CHANGE}
 
 \begin{frame}
-  \frametitle{C-CHANGE}
+\frametitle{C-CHANGE: Science for a changing agriculture}
+\setkeys{Gin}{width=0.35\textwidth}
+
+% \begin{columns}
+% \begin{column}{0.5\textwidth}
+\includegraphics{cchange}
+% \end{column}
+% \begin{column}{0.5\textwidth}
+
+\url{http://agchange.org}
+% \end{column}
+% \end{columns}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Iowa Agricultural Production}
+
+{\tiny \url{https://www.iadg.com/iowa-advantages/target-industries/}}
+
+\begin{quote}
+Iowa is the largest producer of corn, pork and eggs in the United States and 
+second in soybeans and red meat production.
+\end{quote}
+
+\vspace{0.2in}
+
+\includegraphics[height=0.3\textheight, width=0.2\textwidth, trim = 0 0 0 50, clip]{corn}
+\includegraphics[height=0.3\textheight, width=0.2\textwidth, trim = 0 0 250 0, clip]{hogs}
+\includegraphics[height=0.3\textheight, width=0.2\textwidth]{eggs}
+\includegraphics[height=0.3\textheight, width=0.2\textwidth]{soybeans}
+\includegraphics[height=0.3\textheight, width=0.2\textwidth, trim = 0 100 0 100, clip]{cows}
+
+\vspace{0.2in} 
+
+{\tiny 
+\url{https://www.britannica.com/plant/corn-plant}
+
+\url{https://www.nationalhogfarmer.com/marketing/total-pork-production-2014-down-slightly}
+
+\url{https://www.medicalnewstoday.com/articles/283659}
+
+\url{https://www.midwestfarmreport.com/2019/12/11/state-soybean-yield-contest-entries-announced/}
+
+\url{https://www.scientificamerican.com/article/meat-and-environment/}
+}
+
+
+
 
 \end{frame}
+
+
 
 \subsection{Dead zone}
-
 \begin{frame}
-  \frametitle{Negative aspects of farming}
+\frametitle{Gulf of Mexico Dead Zone}
+\setkeys{Gin}{width=0.9\textwidth}
 
-  Dead zone in Gulf of Mexico
+\includegraphics{dead_zone}
+
+{\tiny \url{https://www.noaa.gov/media-release/gulf-of-mexico-dead-zone-is-largest-ever-measured}}
 \end{frame}
 
-\subsection{STRIPS}
 
+
+\subsection{Des Moines Water Works Lawsuit}
 \begin{frame}
-  \frametitle{STRIPS}
+\frametitle{Des Moines Water Works Lawsuit}
+\setkeys{Gin}{width=0.7\textwidth}
+
+\includegraphics{des_moines_water_works_lawsuit}
+
+{\tiny \url{https://www.lwvumrr.org/blog/des-moines-water-works-lawsuit-update}}
+
 \end{frame}
 
-\subsection{Biogas production}
+
+
 
 \begin{frame}
-  \frametitle{USDA NIFA - Biogas production}
+\frametitle{COVID-19 in Meat Packing Plants}
+\setkeys{Gin}{width=0.4\textwidth}
+
+\includegraphics{meat_packing_covid19}
+
+{\tiny \url{https://www.statista.com/chart/21585/meat-processing-plants-reporting-coronavirus-cases/}}
+
 \end{frame}
+
+
+
+\subsection{Prairie STRIPS}
+\begin{frame}
+\frametitle{Prairie STRIPS}
+\setkeys{Gin}{width=0.6\textwidth}
+
+\includegraphics{prairie_strips}
+
+\url{http://prairiestrips.org}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Prairie STRIPS}
+\setkeys{Gin}{width=0.5\textwidth}
+
+\includegraphics{prairie_strips_article}
+
+\url{https://www.pnas.org/content/114/42/11247.short}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Prairie STRIPS results}
+\setkeys{Gin}{width=0.45\textwidth}
+
+\includegraphics{prairie_strips_results}
+
+\url{https://www.pnas.org/content/114/42/11247/tab-figures-data}
+
+\end{frame}
+
+
+
+
+
+% \subsection{Biogas production}
+% 
+% \begin{frame}
+%   \frametitle{USDA NIFA - Biogas production}
+% \end{frame}
+
+
+
+\section{USDA NIFA CAP}
+\begin{frame}
+\frametitle{USDA NIFA CAP}
+\setkeys{Gin}{width=0.8\textwidth}
+
+\includegraphics{usda_nifa}
+
+\vspace{0.2in} \pause
+
+\includegraphics{usda_nifa_value_chain}
+
+\end{frame}
+
+
 
 \subsection{Computer models}
 \begin{frame}
   \frametitle{Computer models}
 
-  \begin{itemize}
-  \item \href{https://www.fs.usda.gov/ccrc/tools/watershed-erosion-prediction-project}{WEPP}
-  \item \href{https://www.apsim.info/}{APSIM}
+  \begin{itemize}[<+->]
+  \item \href{https://www.fs.usda.gov/ccrc/tools/watershed-erosion-prediction-project}{Water Erosion Prediction Project (WEPP)}
+    \begin{itemize}
+    \item \href{https://www.dailyerosion.org/map}{Daily Erosion Project (DEP)}
+    % \item \href{https://www.dailyerosion.org/map/#20200908//avg_delivery/-94.50/42.10/6//0/}{Daily Erosion Project (DEP)}
+    \end{itemize}
+  \item \href{https://www.apsim.info/}{Agricultural Production Systems sIMulator (APSIM)}
+    \begin{itemize}
+    \item \href{https://cchange.research.iastate.edu/projects/foresite-precision-agriculture-data-as-an-isu-service/}{Foresite}
+    \end{itemize}
   \item \href{https://github.com/PSUmodeling/Cycles}{Cycles}
+  \item \href{http://www.iowabiogasmodel.us/}{Iowa Biogas Assessment Model (IBAM)}
   \item others...
   \end{itemize}
 \end{frame}
@@ -126,7 +260,12 @@ set.seed(20200109)
 \section{Introduction}
 
 \begin{frame}
+<<<<<<< HEAD
   \frametitle{Foresite}
+=======
+  \frametitle{FORESITE}
+\setkeys{Gin}{width=0.5\textwidth}
+>>>>>>> aa7d11570987c1480cbb0d981b97513ef820682d
 
     \begin{figure}
         \begin{center}
@@ -138,6 +277,7 @@ set.seed(20200109)
 \begin{frame}
   \frametitle{APSIM}
   \framesubtitle{Overview}
+\setkeys{Gin}{width=0.5\textwidth}
 
   \begin{figure}
       \begin{center}
@@ -461,9 +601,8 @@ likelihood evaluations.
 
   Other links:
   \begin{itemize}
-    \item http://www.jaradniemi.com/
-    \item https://www.youtube.com/jaradniemi
-    \item https://twitter.com/jaradniemiv
+    \item \url{http://www.jarad.me/}
+    \item \url{https://luisdamiano.github.io/}
   \end{itemize}
 \end{frame}
 
@@ -476,5 +615,6 @@ likelihood evaluations.
   \bibliography{references_jn,references_ld}
   \bibliographystyle{plainnat}
 \end{frame}
+\backupend
 
 \end{document}
