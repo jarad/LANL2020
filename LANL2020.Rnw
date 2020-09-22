@@ -99,6 +99,44 @@ set.seed(20200109)
 \end{frame}
 
 
+\begin{frame}
+\frametitle{Iowa Agricultural Production}
+
+{\tiny \url{https://www.iadg.com/iowa-advantages/target-industries/}}
+
+\begin{quote}
+Iowa is the largest producer of corn, pork and eggs in the United States and 
+second in soybeans and red meat production.
+\end{quote}
+
+\vspace{0.2in}
+
+\includegraphics[height=0.2\textheight, width=0.2\textwidth, trim = 0 0 0 50, clip]{corn}
+\includegraphics[height=0.2\textheight, width=0.2\textwidth, trim = 0 0 250 0, clip]{hogs}
+\includegraphics[height=0.2\textheight, width=0.2\textwidth]{eggs}
+\includegraphics[height=0.2\textheight, width=0.2\textwidth]{soybeans}
+\includegraphics[height=0.2\textheight, width=0.2\textwidth, trim = 0 100 0 100, clip]{cows}
+
+\vspace{0.2in} 
+
+{\tiny 
+\url{https://www.britannica.com/plant/corn-plant}
+
+\url{https://www.nationalhogfarmer.com/marketing/total-pork-production-2014-down-slightly}
+
+\url{https://www.medicalnewstoday.com/articles/283659}
+
+\url{https://www.midwestfarmreport.com/2019/12/11/state-soybean-yield-contest-entries-announced/}
+
+\url{https://www.scientificamerican.com/article/meat-and-environment/}
+}
+
+
+
+
+\end{frame}
+
+
 
 \subsection{Dead zone}
 \begin{frame}
@@ -178,6 +216,20 @@ set.seed(20200109)
 %   \frametitle{USDA NIFA - Biogas production}
 % \end{frame}
 
+
+
+\section{USDA NIFA CAP}
+\begin{frame}
+\frametitle{USDA NIFA CAP}
+\setkeys{Gin}{width=\textwidth}
+
+\includegraphics{usda_nifa}
+
+\vspace{0.2in} \pause
+
+\includegraphics{usda_nifa_value_chain}
+
+\end{frame}
 
 
 
@@ -598,9 +650,8 @@ model.
 
   Other links:
   \begin{itemize}
-    \item http://www.jaradniemi.com/
-    \item https://www.youtube.com/jaradniemi
-    \item https://twitter.com/jaradniemiv
+    \item \url{http://www.jarad.me/}
+    \item \url{https://luisdamiano.github.io/}
   \end{itemize}
 \end{frame}
 
