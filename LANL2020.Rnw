@@ -126,7 +126,7 @@ set.seed(20200109)
 \section{Introduction}
 
 \begin{frame}
-  \frametitle{FORESITE}
+  \frametitle{Foresite}
 
     \begin{figure}
         \begin{center}
@@ -177,22 +177,22 @@ set.seed(20200109)
     \begin{column}{0.5\textwidth}
       \begin{itemize}
         \item 2,160 run-specific input values
-        \begin{description}
-          \item[Soil properties] $k\times16$ layers, X scalars.
-          \item[Climate dynamics] $k\times1095$ daily values.
-          \item[Land management practices] continuous and categorical scalars.
-        \end{description}
+        \begin{itemize}
+          \item Soil properties 2 functionals x 16 layers, 2 scalars.
+          \item Climate dynamics 4 functionals x 365 daily values, 2 scalars.
+          \item Land management practices, but mostly categorical scalars.
+        \end{itemize}
       \end{itemize}
     \end{column}
 
     \begin{column}{0.5\textwidth}
       \begin{itemize}
         \item The input space is...
-        \begin{description}
-          \item[High dimensional] means computational and modeling challenging.
-          \item[Structured and complex] to capture. Hierarchy.
-          \item[Vast] large number of runs to explore.
-        \end{description}
+        \begin{itemize}
+          \item High dimensional means computational and modeling challenging.
+          \item Structured and complex to capture. Hierarchy.
+          \item Vast large number of runs to explore.
+        \end{itemize}
       \end{itemize}
     \end{column}
   \end{columns}
@@ -217,65 +217,24 @@ set.seed(20200109)
   \end{columns}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Computational considerations}
-
-  sIMulator (APSIM), a framework that encompasses many of the relevant
-  mechanistic models required to explore changes in agricultural
-  landscapes \cite{janssenNewGenerationAgricultural2017b}.
-
-  Agricultural production in states such as Iowa are the largest in the
-  country, producing large amount of commodities like corn, soybeans,
-  and animal products on over 80\% of the state's land. However,
-  production at such a large scale does not come without consequences,
-  and transitioning land into more sustainable crops or wildlife habitat
-  is needed. A team of agricultural and natural resources scientists
-  will be able to examine more closely how different farm management
-  practices can affect the balance between production, profitability,
-  and environmental stewardship of land and water. Additionally, the
-  resulting methodology will be rapidly applicable to a vast number of
-  existing computer models as functional inputs are a frequent
-  characteristic of mechanistic models.
-
-  But the ultimate impact will exceed the clear need of novel
-  methodology to take on the project statistical complex challenges: the
-  surrogate is the statistical side of a holistic, multi-faceted effort
-  to empower the whole community with an economic and environmental
-  assessment tool for targeted agricultural change. The relevance of
-  designing an interpretable, human-friendly computer experiment
-  emulator arises from the frequently overlooked need to communicate the
-  agronomic science findings in a way that the whole community can grasp
-  them. Farmers, advisers, policy makers, privately and publicly funded
-  support decision providers, and the society as a whole will be in a
-  better position to understand and trust an interpretable,
-  well-principled scientific model. As quoted in
-  \cite{roseInvolvingStakeholdersAgricultural2018a}, ``The pathway to
-  sustainability is littered with the burning wrecks of failed decision
-  support systems.''
-
-  Should this proposal be funded, the statistical methodology to be
-  explored would play a central role in a transdisciplinary enterprise
-  to tackle well-documented enormous financial losses to farmers,
-  serious degradation of drinking water and recreation, and prominent
-  threats to human health and fisheries from Iowa communities to the
-  Gulf of Mexico. All in all, this proposal provides value to the
-  statistics community, natural scientists, and society as a whole.
-
-  We anticipate that more than
-  1 million runs would be needed to explore the vast input space with a
-  reasonable granularity, and thus this also becomes a big data
-  problem. By combining public data from several sources, a first test
-  batch of approximately 60,000 scenarios was run to estimate crop
-  productivity, nitrate nitrogen leaching, and profitability of corn and
-  soybeans at a $30m^2$ resolution. Preliminary analyses reveal a
-  characteristic correlation structure in the input consistent with the
-  aforementioned hierarchy. Within-module variables tend to show
-  pairwise correlation absolute values in the range $(.4, .6)$ which can
-  exceed $.9$ within each functional. We also noted that input-output
-  partial relationships are highly non-linear, and variable importance
-  is very heterogeneous.
-
-\end{frame}
+% \begin{frame}
+%   \frametitle{Computational considerations}
+%
+%   We anticipate that more than
+%   1 million runs would be needed to explore the vast input space with a
+%   reasonable granularity, and thus this also becomes a big data
+%   problem. By combining public data from several sources, a first test
+%   batch of approximately 60,000 scenarios was run to estimate crop
+%   productivity, nitrate nitrogen leaching, and profitability of corn and
+%   soybeans at a $30m^2$ resolution. Preliminary analyses reveal a
+%   characteristic correlation structure in the input consistent with the
+%   aforementioned hierarchy. Within-module variables tend to show
+%   pairwise correlation absolute values in the range $(.4, .6)$ which can
+%   exceed $.9$ within each functional. We also noted that input-output
+%   partial relationships are highly non-linear, and variable importance
+%   is very heterogeneous.
+%
+% \end{frame}
 
 \begin{frame}
   \frametitle{Training a GP - revisited}
@@ -410,22 +369,14 @@ likelihood evaluations.
 \end{frame}
 
 \begin{frame}
-  \frametitle{Visualization (1D)}
+  \frametitle{Visualization}
 
-  Maybe a diagram of 1D APSIM input-output
-\end{frame}
-
-
-\begin{frame}
-  \frametitle{Visualization (2D)}
-
-  Maybe a diagram of 1D APSIM input-output
-\end{frame}
-
-\begin{frame}
-  \frametitle{Comparison with other methods}
-
-  Maybe some results from the paper ???
+  \begin{figure}
+      \begin{center}
+          \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{./include/oatfit}
+      \end{center}
+  \end{figure}
+  % s
 \end{frame}
 
 % Part III: Future efforts -----------------------------------------------------
@@ -436,7 +387,7 @@ likelihood evaluations.
   \framesubtitle{Methodology \& limitations so far}
 
   \begin{itemize}
-      \item Small scalar input set and single scalar response \cite{currinBayesianPredictionDeterministic1991,sacksDesignAnalysisComputer1989}
+      \item Small unstructured input vector and single scalar response \cite{currinBayesianPredictionDeterministic1991,sacksDesignAnalysisComputer1989}
       \item High dimensional outputs.
         \begin{itemize}
           \item Multivariate GP \cite{arendtImprovingIdentifiabilityModel2012,bilionisMultioutputLocalGaussian2012,bilionisMultioutputSeparableGaussian2013,drigneiEmpiricalBayesianAnalysis2006,frickerMultivariateGaussianProcess2013,higdonComputerModelCalibration2008,rougierEfficientEmulatorsMultivariate2008,salterEfficientCalibrationHighdimensional2019}
@@ -451,37 +402,34 @@ likelihood evaluations.
   \end{alertblock}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Statistical emulator}
-  \framesubtitle{Plan of Attack -- Ad-hoc pre-processing rules}
-
-  Ad-hoc pre-processing rules: sparse GP, etc.
-\end{frame}
-
-\begin{frame}
-  \frametitle{Statistical emulator}
-  \framesubtitle{Plan of Attack -- More principled approach}
+\begin{frame}[allowframebreaks]
+  \frametitle{Approach 1}
 
   \begin{columns}
     \begin{column}{0.5\textwidth}
-      Hierarchical GP as a more principled approach
       \begin{itemize}
-        \item xx
-        \begin{itemize}
-          \item Recognize functional inputs as a finite representation of an infinite space.
-          \item Each functional input is modeled as a GP.
-          \item Functional latent functions and scalar inputs are modeled with a GP representing the computer
-model.
-          \item Large n should be explore, e.g. NNGP and laGP.
-        \end{itemize}
+        \item Let $Y \in \R$ be a scalar-valued output
+        \item Let $\mathbf{X}$ be a $D$-sized input vector, $D \in \N$
+        \item Assume $Y = f(\mathbf{X})$
+        \item Assume $Y \sim GP(\mu, \sigma^2)$, $\mu \in \R$ and $\sigma^2 > 0$
+        \item Recall the SE Kernel with ARD
+
+        \begin{equation*}
+          \label{eq:weighted-distance}
+          k(\mathbf{X_i}, \mathbf{X_j}) = \sigma^2_{ard} e^{-\frac{1}{2} \sum_{d = 1}^{D}{w_d (X_{i, d} - X_{j, d})^2}}
+        \end{equation*}
+        \newline
+        with $\sigma^2_{ard} > 0, w_d > 0 \ \forall \ d \in \{1, \dots, D\}$
       \end{itemize}
     \end{column}
 
     \begin{column}{0.5\textwidth}
-      DeepGP diagram here
+
+      \begin{equation*}
+        D(\mathbf{X_i}, \mathbf{X_j}, \mathbf{w}) = \sum_{d = 1}^{D}{w_d (X_{i, d} - X_{j, d})^2}
+      \end{equation*}
     \end{column}
   \end{columns}
-
 \end{frame}
 
 \begin{frame}
