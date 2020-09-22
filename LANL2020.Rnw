@@ -22,8 +22,8 @@
 
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{itemize items}[default]
-\setbeamertemplate{itemize subitem}{\alph{enumii}.}
-\setbeamertemplate{itemize subsubitem}{\roman{enumiii}.}
+% \setbeamertemplate{itemize subitem}{\alph{enumii}.}
+% \setbeamertemplate{itemize subsubitem}{\roman{enumiii}.}
 \setkeys{Gin}{width=0.6\textwidth}
 
 \newcommand{\I}{\mathrm{I}}
@@ -84,38 +84,119 @@ set.seed(20200109)
 \section{C-CHANGE}
 
 \begin{frame}
-  \frametitle{C-CHANGE}
+\frametitle{C-CHANGE: Science for a changing agriculture}
+\setkeys{Gin}{width=0.5\textwidth}
 
+% \begin{columns}
+% \begin{column}{0.5\textwidth}
+\includegraphics{cchange}
+% \end{column}
+% \begin{column}{0.5\textwidth}
+
+\url{http://agchange.org}
+% \end{column}
+% \end{columns}
 \end{frame}
+
+
 
 \subsection{Dead zone}
-
 \begin{frame}
-  \frametitle{Negative aspects of farming}
+\frametitle{Gulf of Mexico Dead Zone}
+\setkeys{Gin}{width=\textwidth}
 
-  Dead zone in Gulf of Mexico
+\includegraphics{dead_zone}
+
+{\tiny \url{https://www.noaa.gov/media-release/gulf-of-mexico-dead-zone-is-largest-ever-measured}}
 \end{frame}
 
-\subsection{STRIPS}
 
+
+\subsection{Des Moines Water Works Lawsuit}
 \begin{frame}
-  \frametitle{STRIPS}
+\frametitle{Des Moines Water Works Lawsuit}
+\setkeys{Gin}{width=0.8\textwidth}
+
+\includegraphics{des_moines_water_works_lawsuit}
+
+{\tiny \url{https://www.lwvumrr.org/blog/des-moines-water-works-lawsuit-update}}
+
 \end{frame}
 
-\subsection{Biogas production}
+
+
 
 \begin{frame}
-  \frametitle{USDA NIFA - Biogas production}
+\frametitle{COVID-19 in Meat Packing Plants}
+
+\includegraphics{meat_packing_covid19}
+
+{\tiny \url{https://www.statista.com/chart/21585/meat-processing-plants-reporting-coronavirus-cases/}}
+
 \end{frame}
+
+
+
+\subsection{Prairie STRIPS}
+\begin{frame}
+\frametitle{Prairie STRIPS}
+\setkeys{Gin}{width=0.8\textwidth}
+
+\includegraphics{prairie_strips}
+
+\url{http://prairiestrips.org}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Prairie STRIPS}
+\setkeys{Gin}{width=0.7\textwidth}
+
+\includegraphics{prairie_strips_article}
+
+\url{https://www.pnas.org/content/114/42/11247.short}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Prairie STRIPS results}
+\setkeys{Gin}{width=0.6\textwidth}
+
+\includegraphics{prairie_strips_results}
+
+\url{https://www.pnas.org/content/114/42/11247/tab-figures-data}
+
+\end{frame}
+
+
+
+
+
+% \subsection{Biogas production}
+% 
+% \begin{frame}
+%   \frametitle{USDA NIFA - Biogas production}
+% \end{frame}
+
+
+
 
 \subsection{Computer models}
 \begin{frame}
   \frametitle{Computer models}
 
-  \begin{itemize}
-  \item \href{https://www.fs.usda.gov/ccrc/tools/watershed-erosion-prediction-project}{WEPP}
-  \item \href{https://www.apsim.info/}{APSIM}
+  \begin{itemize}[<+->]
+  \item \href{https://www.fs.usda.gov/ccrc/tools/watershed-erosion-prediction-project}{Water Erosion Prediction Project (WEPP)}
+    \begin{itemize}
+    \item \href{https://www.dailyerosion.org/map}{Daily Erosion Project (DEP)}
+    % \item \href{https://www.dailyerosion.org/map/#20200908//avg_delivery/-94.50/42.10/6//0/}{Daily Erosion Project (DEP)}
+    \end{itemize}
+  \item \href{https://www.apsim.info/}{Agricultural Production Systems sIMulator (APSIM)}
+    \begin{itemize}
+    \item \href{https://cchange.research.iastate.edu/projects/foresite-precision-agriculture-data-as-an-isu-service/}{Foresite}
+    \end{itemize}
   \item \href{https://github.com/PSUmodeling/Cycles}{Cycles}
+  \item \href{http://www.iowabiogasmodel.us/}{Iowa Biogas Assessment Model (IBAM)}
   \item others...
   \end{itemize}
 \end{frame}
