@@ -122,7 +122,8 @@ set.seed(20200109)
 
 % LD ---------------------------------------------------------------------------
 
-\section{APSIM}
+% Part I: Introduction ---------------------------------------------------------
+\section{Introduction}
 
 \begin{frame}
   \frametitle{FORESITE}
@@ -138,13 +139,18 @@ set.seed(20200109)
   \frametitle{APSIM}
   \framesubtitle{Overview}
 
-  List of bullets what APSIM is.
+  \begin{figure}
+      \begin{center}
+          \includegraphics[]{./include/jigsaw}
+      \end{center}
+  \end{figure}
 
   \begin{itemize}
     \item Physical process based.
     \item Peer-reviewed.
     \item Flexible.
     \item Calibrated for many different climates and countries.
+    \item Dedicated, funded team of software engineers working to improve it.
   \end{itemize}
 \end{frame}
 
@@ -153,8 +159,10 @@ set.seed(20200109)
   \framesubtitle{Goals}
 
   \begin{itemize}
-    \item Reduce to a relatively small number of inputs.
+    \item Reduce to a relatively small number of inputs to guide field scientists.
     \item Better understand computer model deficiencies: does APSIM emphasize on soil too much?
+    \item Model calibration: APSIM assumes a flat, uniform soil. TWI.
+    \item Uncertainty quantification: APSIM is deterministic
     \item Provide on-line prediction for the final user.
     \item Inform the development \& calibration of new crop modules (e.g. cover crops).
     \item Assist agronomists in studying agronomic hypothesis.
@@ -186,7 +194,7 @@ set.seed(20200109)
         \item The input space is...
         \begin{description}
           \item[High dimensional] means computational and modeling challenging.
-          \item[Structured and complex] to capture.
+          \item[Structured and complex] to capture. Hierarchy.
           \item[Vast] large number of runs to explore.
         \end{description}
       \end{itemize}
@@ -194,7 +202,85 @@ set.seed(20200109)
   \end{columns}
 \end{frame}
 
-\section{Sparse GPs using knots}
+% Part II: Methodology & Results -----------------------------------------------
+\section{Methodology \& Results}
+
+\begin{frame}
+  \frametitle{APSIM}
+  \framesubtitle{Exploratory Analyses}
+
+  % Cite package -- pretty fast
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      % Variable importance
+    \end{column}
+
+    \begin{column}{0.5\textwidth}
+      % Two partial dependence plots
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Computational considerations}
+
+  sIMulator (APSIM), a framework that encompasses many of the relevant
+  mechanistic models required to explore changes in agricultural
+  landscapes \cite{janssenNewGenerationAgricultural2017b}.
+
+  Agricultural production in states such as Iowa are the largest in the
+  country, producing large amount of commodities like corn, soybeans,
+  and animal products on over 80\% of the state's land. However,
+  production at such a large scale does not come without consequences,
+  and transitioning land into more sustainable crops or wildlife habitat
+  is needed. A team of agricultural and natural resources scientists
+  will be able to examine more closely how different farm management
+  practices can affect the balance between production, profitability,
+  and environmental stewardship of land and water. Additionally, the
+  resulting methodology will be rapidly applicable to a vast number of
+  existing computer models as functional inputs are a frequent
+  characteristic of mechanistic models.
+
+  But the ultimate impact will exceed the clear need of novel
+  methodology to take on the project statistical complex challenges: the
+  surrogate is the statistical side of a holistic, multi-faceted effort
+  to empower the whole community with an economic and environmental
+  assessment tool for targeted agricultural change. The relevance of
+  designing an interpretable, human-friendly computer experiment
+  emulator arises from the frequently overlooked need to communicate the
+  agronomic science findings in a way that the whole community can grasp
+  them. Farmers, advisers, policy makers, privately and publicly funded
+  support decision providers, and the society as a whole will be in a
+  better position to understand and trust an interpretable,
+  well-principled scientific model. As quoted in
+  \cite{roseInvolvingStakeholdersAgricultural2018a}, ``The pathway to
+  sustainability is littered with the burning wrecks of failed decision
+  support systems.''
+
+  Should this proposal be funded, the statistical methodology to be
+  explored would play a central role in a transdisciplinary enterprise
+  to tackle well-documented enormous financial losses to farmers,
+  serious degradation of drinking water and recreation, and prominent
+  threats to human health and fisheries from Iowa communities to the
+  Gulf of Mexico. All in all, this proposal provides value to the
+  statistics community, natural scientists, and society as a whole.
+
+  We anticipate that more than
+  1 million runs would be needed to explore the vast input space with a
+  reasonable granularity, and thus this also becomes a big data
+  problem. By combining public data from several sources, a first test
+  batch of approximately 60,000 scenarios was run to estimate crop
+  productivity, nitrate nitrogen leaching, and profitability of corn and
+  soybeans at a $30m^2$ resolution. Preliminary analyses reveal a
+  characteristic correlation structure in the input consistent with the
+  aforementioned hierarchy. Within-module variables tend to show
+  pairwise correlation absolute values in the range $(.4, .6)$ which can
+  exceed $.9$ within each functional. We also noted that input-output
+  partial relationships are highly non-linear, and variable importance
+  is very heterogeneous.
+
+\end{frame}
+
 \begin{frame}
   \frametitle{Training a GP - revisited}
 
@@ -346,7 +432,8 @@ likelihood evaluations.
   Maybe some results from the paper ???
 \end{frame}
 
-\section{Statistical emulator}
+% Part III: Future efforts -----------------------------------------------------
+\section{Future efforts}
 
 \begin{frame}
   \frametitle{Statistical emulator}
