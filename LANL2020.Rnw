@@ -29,6 +29,18 @@
 % \setbeamertemplate{itemize subsubitem}{\roman{enumiii}.}
 \setkeys{Gin}{width=0.6\textwidth}
 
+% Reference and link colors
+\hypersetup{
+  colorlinks  = false,
+  linkcolor   = blue,
+  urlcolor    = blue,
+  citecolor   = blue,
+  anchorcolor = blue
+}
+
+% Math commands
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
 \newcommand{\I}{\mathrm{I}}
 \newcommand{\ind}{\stackrel{ind}{\sim}}
 \providecommand{\ov}[1]{\overline{#1}}
@@ -525,13 +537,13 @@ likelihood evaluations.
 
 \begin{frame}
   \frametitle{Future Efforts}
-  \framesubtitle{Extending Morris (2012)}
+  \framesubtitle{Extending \cite{morrisGaussianSurrogatesComputer2012}' correlation distance for unknown weight function}
 
-  \begin{columns}
+  \begin{columns}[T]
     \begin{column}{0.5\textwidth}
       \begin{itemize}
         \item Let $Y \in \R$ be a scalar-valued output
-        \item Let $\mathbf{X}$ be a $D$-sized input vector, $D \in \mathcal{N}$
+        \item Let $\mathbf{X}$ be a $D$-sized input vector, $D \in \N$
         \item Assume $Y = f(\mathbf{X})$
         \item Assume $Y \sim GP(\mu, \sigma^2)$, $\mu \in \R$ and $\sigma^2 > 0$
         \item Recall the SE Kernel with ARD
@@ -544,22 +556,34 @@ likelihood evaluations.
     \end{column}
 
     \begin{column}{0.5\textwidth}
-      \begin{itemize}
-        \item Let X model input that be a function of a continuous index $X_i(t), X_j(t)$ for $t \in [0, T], T \in \R^+$
-      \end{itemize}
+      % \begin{itemize}
+      %   \item If $\mathbf{X}$ is function of a continuous index $X_i(t), X_j(t)$ for $t \in [0, T], T \in \R^+$
+      % \end{itemize}
 
-      \begin{equation*}
+      % If $\mathbf{X}$ is function of a continuous index $X_i(t), X_j(t)$ for $t \in [0, T], T \in \R^+$
+
+      For a continuous index $t \in [0, T], T \in \R^+$
+
+      % Equations don't fit vertically in the slide otherwise
+      \setlength{\abovedisplayskip}{-1pt}
+      \setlength{\belowdisplayskip}{10pt}
+
+      \begin{align*}
         \label{eq:weighted-distance-cts}
-          D(X_i(t), X_j(t), w) = \int_{0}^{t}{ w(s - t) {(X_i(t) - X_j(t))}^2 ds}
-      \end{equation*}
+          D(\cdot) &= \int_{0}^{t}{ w(t - s) {(X_i(s) - X_j(s))}^2 ds} \\
+          w        &: \R^+ \to \R^+
+      \end{align*}
 
+      The model now becomes as follows
 
       \begin{align*}
         \mu_w         &\sim \pi(\mu_w)    \\
         \sigma_w      &\sim \pi(\sigma_w) \\
         \log w(t)     &\sim GP(\mu_w, \sigma^2_w) \\
-        Y             &\sim GP(\mu_Y, \sigma^2_Y),
+        Y             &\sim GP(\mu_Y, \sigma^2_Y)
       \end{align*}
+
+      for some priors $\pi(\mu_w)$, $\pi(\sigma_w)$
 
     \end{column}
   \end{columns}
@@ -569,7 +593,7 @@ likelihood evaluations.
   \frametitle{Future Efforts}
   \framesubtitle{Deep Gaussian Process}
 
-  \begin{columns}
+  \begin{columns}[T]
     \begin{column}{0.5\textwidth}
       \begin{itemize}
         \item High-dimensional input vector $\mathbf{X}$ with $M \in \mathbb{N}$
@@ -605,10 +629,13 @@ $f_Y \sim GP(\mu_Y,\sigma_Y)$
           text opacity=1,
           inner sep=1pt,
           minimum size=25pt,
-          font=\scriptsize},
+          font=\scriptsize,
+          scale=0.9
+          },
         myarrow/.style={-Stealth},
         node distance=0.5cm and 1.2cm,
-        node/.style={circle, draw, minimum size=25pt}
+        node/.style={circle, draw, minimum size=25pt},
+        every node/.style={scale=0.9}
         ]
 
         % Input node
