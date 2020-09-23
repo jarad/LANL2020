@@ -1,4 +1,4 @@
-\documentclass[handout,10pt,aspectratio=169]{beamer}
+\documentclass[10pt,handout,aspectratio=169]{beamer}
 \usepackage{natbib}
 \usepackage{pdfpages}
 \usepackage{tikz}
@@ -290,13 +290,17 @@ second in soybeans and red meat production.
   \framesubtitle{Overview}
   \setkeys{Gin}{width=0.5\textwidth}
 
+  \pause
+
   \begin{figure}
       \begin{center}
           \includegraphics[]{./include/jigsaw}
       \end{center}
   \end{figure}
 
-  \begin{itemize}
+   \pause
+
+  \begin{itemize}[<+->]
     \item Physical process based
     \item Peer-reviewed
     \item Flexible
@@ -309,7 +313,9 @@ second in soybeans and red meat production.
   \frametitle{APSIM}
   \framesubtitle{Emulation goals}
 
-  \begin{itemize}
+  \pause
+
+  \begin{itemize}[<+->]
     \item Variable selection: to guide data collection by field scientists.
     \item Model calibration: APSIM assumes a flat, uniform soil. TWI.
     \item Identify deficiencies: does APSIM emphasize on soil too much?
@@ -326,7 +332,7 @@ second in soybeans and red meat production.
 
   \begin{columns}
     \begin{column}{0.5\textwidth}
-      \begin{itemize}
+      \begin{itemize}[<+->]
         \item 2,160 run-specific input values
         \begin{itemize}
           \item Soil properties 2 functionals x 16 layers, 2 scalars.
@@ -337,12 +343,12 @@ second in soybeans and red meat production.
     \end{column}
 
     \begin{column}{0.5\textwidth}
-      \begin{itemize}
+      \begin{itemize}[<+->]
         \item The input space is...
         \begin{itemize}
-          \item High dimensional means computational and modeling challenging.
-          \item Structured and complex to capture. Hierarchy.
-          \item Vast large number of runs to explore.
+          \item High dimensional: computational and modeling challenging.
+          \item Structured: complex to capture hierarchy.
+          \item Vast: large number of runs to explore.
         \end{itemize}
       \end{itemize}
     \end{column}
@@ -356,15 +362,19 @@ second in soybeans and red meat production.
   \frametitle{APSIM}
   \framesubtitle{Exploratory Analyses}
 
+  \pause
+
   % Cite package -- pretty fast
   \begin{columns}
     \begin{column}{0.5\textwidth}
         \begin{figure}
-      \begin{center}
-          \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{./include/rf_importance_cl}
-      \end{center}
+        \begin{center}
+            \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{./include/rf_importance_cl}
+        \end{center}
   \end{figure}
     \end{column}
+
+    \pause
 
     \begin{column}{0.5\textwidth}
         \begin{figure}
@@ -539,9 +549,11 @@ likelihood evaluations.
   \frametitle{Future Efforts}
   \framesubtitle{Extending \cite{morrisGaussianSurrogatesComputer2012}' correlation distance for unknown weight function}
 
+  \pause
+
   \begin{columns}[T]
     \begin{column}{0.5\textwidth}
-      \begin{itemize}
+      \begin{itemize}[<+->]
         \item Let $Y \in \R$ be a scalar-valued output
         \item Let $\mathbf{X}$ be a $D$-sized input vector, $D \in \N$
         \item Assume $Y = f(\mathbf{X})$
@@ -555,13 +567,9 @@ likelihood evaluations.
       \end{itemize}
     \end{column}
 
+    \pause
+
     \begin{column}{0.5\textwidth}
-      % \begin{itemize}
-      %   \item If $\mathbf{X}$ is function of a continuous index $X_i(t), X_j(t)$ for $t \in [0, T], T \in \R^+$
-      % \end{itemize}
-
-      % If $\mathbf{X}$ is function of a continuous index $X_i(t), X_j(t)$ for $t \in [0, T], T \in \R^+$
-
       For a continuous index $t \in [0, T], T \in \R^+$
 
       % Equations don't fit vertically in the slide otherwise
@@ -574,11 +582,13 @@ likelihood evaluations.
           w        &: \R^+ \to \R^+
       \end{align*}
 
+      \pause
+
       The model now becomes as follows
 
       \begin{align*}
         \mu_w         &\sim \pi(\mu_w)    \\
-        \sigma_w      &\sim \pi(\sigma_w) \\
+        \sigma^2_w    &\sim \pi(\sigma_w) \\
         \log w(t)     &\sim GP(\mu_w, \sigma^2_w) \\
         Y             &\sim GP(\mu_Y, \sigma^2_Y)
       \end{align*}
@@ -593,31 +603,11 @@ likelihood evaluations.
   \frametitle{Future Efforts}
   \framesubtitle{Deep Gaussian Process}
 
+  \pause
+
   \begin{columns}[T]
-    \begin{column}{0.5\textwidth}
-      \begin{itemize}
-        \item High-dimensional input vector $\mathbf{X}$ with $M \in \mathbb{N}$
-functional inputs.
-        \item Let $\mathbf{X} \in \R^{D_1} \times \cdots \times \R^{D_M} \times \R^{D_{M
-    + 1}}$, where $D_1, \dots, D_M, D_{M + 1} \in \N$, be a $D = \sum_{m = 1}^{M} D_m + D_{M + 1}$ dimensional vector.
-        \item $\mathbf{X} \in \R^{D_1} \times \cdots \times \R^{D_M} \times \R^{D_{M
-    + 1}}$, where $D_1, \dots, D_M, D_{M + 1} \in \N$, be a
-$D = \sum_{m = 1}^{M} D_m + D_{M + 1}$ dimensional vector
 
-        \item For each functional $m \in \{1, \dots, M\}$, let
-$\mathbf{U_m} = \mathbf{f_m}(\mathbf{X_m}) + \mathbf{\varepsilon}_m$
-and assume $\mathbf{f_m} \sim GP(\mathbf{\mu_m}, \mathbf{\sigma_m})$
-for $\mathbf{\mu_m} \in \R^{D_m}$
-
-        \item $\mathbf{\tilde{X}} = (\mathbf{U_{1}}, \dots, \mathbf{U_{M}},
-\mathbf{X_{M+1}})$
-
-        \item $Y = f_Y(\mathbf{\tilde{X}}) + \varepsilon_y$ and
-$f_Y \sim GP(\mu_Y,\sigma_Y)$
-      \end{itemize}
-    \end{column}
-
-    \begin{column}{0.5\textwidth}
+      \begin{column}{0.5\textwidth}
 
       \begin{figure}[h]
       \centering
@@ -657,17 +647,40 @@ $f_Y \sim GP(\mu_Y,\sigma_Y)$
         % Arrows from input matrices to input GPs
         \foreach \i/\j in {1,2,m,M} {
           \draw[myarrow] (X\i) -- node [above] { $f_\i$ } (U\i);
-          \draw[myarrow] (U\i) -- node[above] { $f_Y$  } (Y);
+          \draw[myarrow] (U\i) -- node [above] { $f_Y$  } (Y);
         }
 
-        \draw[myarrow, bend left=90] (XbarM) -- node [above] {          } (Y);
-        \draw[draw=none            ] (X2)    -- node [     ] { $\vdots$ } (Xm);
-        \draw[draw=none            ] (Xm)    -- node [     ] { $\vdots$ } (XM);
+        \draw[myarrow  ] (XbarM) edge [out=0,in=270,->] node [above] { $f_Y$ } (Y);
+        \draw[draw=none] (X2)    -- node [scale=0.5] { $\vdots$ } (Xm);
+        \draw[draw=none] (Xm)    -- node [scale=0.5] { $\vdots$ } (XM);
+        \draw[draw=none] (U2)    -- node [scale=0.5] { $\vdots$ } (Um);
+        \draw[draw=none] (Um)    -- node [scale=0.5] { $\vdots$ } (UM);
       \end{tikzpicture}
 
       \label{fig:deepgp}
       \end{figure}
 
+    \end{column}
+
+    \pause
+
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}[<+->]
+        \item High-dimensional input vector $\mathbf{X}$ with $M \in \mathbb{N}$
+functional inputs.
+        \item Let $\mathbf{X} \in \R^{D_1} \times \cdots \times \R^{D_M} \times \R^{D_{M
+    + 1}}$, where $D_1, \dots, D_M, D_{M + 1} \in \N$, be a $D = \sum_{m = 1}^{M} D_m + D_{M + 1}$ dimensional vector.
+        \item For each functional $m \in \{1, \dots, M\}$, let
+$\mathbf{U_m} = \mathbf{f_m}(\mathbf{X_m}) + \mathbf{\varepsilon}_m$
+and assume $\mathbf{f_m} \sim GP(\mathbf{\mu_m}, \mathbf{\sigma_m})$
+for $\mathbf{\mu_m} \in \R^{D_m}$
+
+        \item $\mathbf{\tilde{X}} = (\mathbf{U_{1}}, \dots, \mathbf{U_{M}},
+\mathbf{X_{M+1}})$
+
+        \item $Y = f_Y(\mathbf{\tilde{X}}) + \varepsilon_y$ and
+$f_Y \sim GP(\mu_Y,\sigma_Y)$
+      \end{itemize}
     \end{column}
   \end{columns}
 \end{frame}
