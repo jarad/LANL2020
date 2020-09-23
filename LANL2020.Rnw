@@ -1,4 +1,4 @@
-\documentclass[10pt,handout,aspectratio=169]{beamer}
+\documentclass[10pt,aspectratio=169]{beamer}
 \usepackage{natbib}
 \usepackage{pdfpages}
 \usepackage{tikz}
@@ -322,7 +322,7 @@ second in soybeans and red meat production.
     \item Uncertainty quantification: APSIM is deterministic, real life is not.
     \item Inform the development \& calibration of new crop modules (e.g. cover crops).
     \item Portability: web interface back end for on-line prediction.
-    \item Assist scientists in studying agronomic hypothesis.
+    \item Assist scientists in studying agronomical hypothesis.
   \end{itemize}
 \end{frame}
 
@@ -335,9 +335,9 @@ second in soybeans and red meat production.
       \begin{itemize}[<+->]
         \item 2,160 run-specific input values
         \begin{itemize}
-          \item Soil properties 2 functionals x 16 layers, 2 scalars.
+          \item Soil properties 22 functionals x 16 layers, 2 scalars.
           \item Climate dynamics 4 functionals x 365 daily values, 2 scalars.
-          \item Land management practices, but mostly categorical scalars.
+          \item Land management practices, mostly categorical scalars.
         \end{itemize}
       \end{itemize}
     \end{column}
@@ -348,7 +348,7 @@ second in soybeans and red meat production.
         \begin{itemize}
           \item High dimensional: computational and modeling challenging.
           \item Structured: complex to capture hierarchy.
-          \item Vast: large number of runs to explore.
+          \item Vast: large number of runs to explore it.
         \end{itemize}
       \end{itemize}
     \end{column}
@@ -500,7 +500,7 @@ second in soybeans and red meat production.
   \framesubtitle{Knot proposal algorithm}
 
   Algorithm 2. Knot proposal algorithm. Set the minimum ($T_{min}$) and maximum ($T_{max}$) number of marginal
-likelihood evaluations.
+likelihood evaluations. $k$ is the current number of knots.
 
   \pause
 
