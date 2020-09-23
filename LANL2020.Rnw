@@ -364,27 +364,8 @@ second in soybeans and red meat production.
   \end{columns}
 \end{frame}
 
-% \begin{frame}
-%   \frametitle{Computational considerations}
-%
-%   We anticipate that more than
-%   1 million runs would be needed to explore the vast input space with a
-%   reasonable granularity, and thus this also becomes a big data
-%   problem. By combining public data from several sources, a first test
-%   batch of approximately 60,000 scenarios was run to estimate crop
-%   productivity, nitrate nitrogen leaching, and profitability of corn and
-%   soybeans at a $30m^2$ resolution. Preliminary analyses reveal a
-%   characteristic correlation structure in the input consistent with the
-%   aforementioned hierarchy. Within-module variables tend to show
-%   pairwise correlation absolute values in the range $(.4, .6)$ which can
-%   exceed $.9$ within each functional. We also noted that input-output
-%   partial relationships are highly non-linear, and variable importance
-%   is very heterogeneous.
-%
-% \end{frame}
-
 \begin{frame}
-  \frametitle{OAT Knot Selection}
+  \frametitle{One-at-a-time knot selection}
   \framesubtitle{Training a GP}
 
   Find the maximum likelihood estimator (MLE) for $\theta = (\tau^2,\sigma^2,\phi)$,
@@ -420,7 +401,8 @@ second in soybeans and red meat production.
 \end{frame}
 
 \begin{frame}
-  \frametitle{Fully Independent Conditional (FIC) Approximation}
+  \frametitle{One-at-a-time knot selection}
+  \framesubtitle{Fully Independent Conditional (FIC) Approximation}
 
   Introduce a set of knots $x^{\dagger} = \left\{x_1^\dagger, \ldots, x_K^\dagger \right\}$ with $K<<N$,
 
@@ -467,7 +449,7 @@ second in soybeans and red meat production.
 \end{frame}
 
 \begin{frame}
-  \frametitle{OAT Knot selection}
+  \frametitle{One-at-a-time knot selection}
   \framesubtitle{Knot selection algorithm}
 
   Algorithm 1. OAT knot selection algorithm.
@@ -485,10 +467,14 @@ second in soybeans and red meat production.
       $x^{\dagger} = \{x^{\dagger}, \hat{x}^{\dagger^*}\}$ \;
     }
   \end{algorithm}
+
+  {\tiny
+    \citep{gartonKnotSelectionSparse2020,gartonScorebasedLikelihoodRatios2020}
+  }
 \end{frame}
 
 \begin{frame}
-  \frametitle{OAT Knot Selection}
+  \frametitle{One-at-a-time knot selection}
   \framesubtitle{Knot proposal algorithm}
 
   Algorithm 2. Knot proposal algorithm. Set the minimum ($T_{min}$) and maximum ($T_{max}$) number of marginal
@@ -516,6 +502,10 @@ likelihood evaluations.
       return $x_j^*$ such that $j=\mbox{argmax}_t \, w_t$
     \end{algorithm}
   }
+
+  {\tiny
+    \citep{gartonKnotSelectionSparse2020,gartonScorebasedLikelihoodRatios2020}
+  }
 \end{frame}
 
 \begin{frame}
@@ -533,26 +523,6 @@ likelihood evaluations.
 % Part III: Future efforts -----------------------------------------------------
 \section{Future efforts}
 
-% \begin{frame}
-%   \frametitle{Statistical emulator}
-%   \framesubtitle{Methodology \& limitations so far}
-%
-%   \begin{itemize}
-%       \item Small unstructured input vector and single scalar response \cite{currinBayesianPredictionDeterministic1991,sacksDesignAnalysisComputer1989}
-%       \item High dimensional outputs.
-%         \begin{itemize}
-%           \item Multivariate GP \cite{arendtImprovingIdentifiabilityModel2012,bilionisMultioutputLocalGaussian2012,bilionisMultioutputSeparableGaussian2013,drigneiEmpiricalBayesianAnalysis2006,frickerMultivariateGaussianProcess2013,higdonComputerModelCalibration2008,rougierEfficientEmulatorsMultivariate2008,salterEfficientCalibrationHighdimensional2019}
-%           \item PCA.
-%           \item Separable GPs
-%           \item Time-indexed output \cite{contiBayesianEmulationComplex2010,contiGaussianProcessEmulation2009,higdonBayesianCalibrationApproach2008}.
-%         \end{itemize}
-%   \end{itemize}
-%
-%   \begin{alertblock}{}
-%     Move references to inner list items.
-%   \end{alertblock}
-% \end{frame}
-
 \begin{frame}
   \frametitle{Future Efforts}
   \framesubtitle{Extending Morris (2012)}
@@ -566,17 +536,10 @@ likelihood evaluations.
         \item Assume $Y \sim GP(\mu, \sigma^2)$, $\mu \in \R$ and $\sigma^2 > 0$
         \item Recall the SE Kernel with ARD
 
-      \begin{align*}
-        k(\mathbf{X_i}, \mathbf{X_j}) &= \sigma^2_{ard} e^{-\frac{1}{2} D(\mathbf{X_i}, \mathbf{X_j}, \mathbf{w})} \\
-        D(\mathbf{X_i}, \mathbf{X_j}, \mathbf{w}) &= \sum_{d = 1}^{D}{w_d (X_{i, d} - X_{j, d})^2}
-      \end{aligh*}
-
-        % \begin{equation*}
-        %   \label{eq:weighted-distance}
-        %   k(\mathbf{X_i}, \mathbf{X_j}) = \sigma^2_{ard} e^{-\frac{1}{2} \sum_{d = 1}^{D}{w_d (X_{i, d} - X_{j, d})^2}}
-        % \end{equation*}
-        % \newline
-        % with $\sigma^2_{ard} > 0, w_d > 0 \ \forall \ d \in \{1, \dots, D\}$
+        \begin{align*}
+          k(\mathbf{X_i}, \mathbf{X_j}) &= \sigma^2_{ard} e^{-\frac{1}{2} D(\mathbf{X_i}, \mathbf{X_j}, \mathbf{w})} \\
+          D(\mathbf{X_i}, \mathbf{X_j}, \mathbf{w}) &= \sum_{d = 1}^{D}{w_d (X_{i, d} - X_{j, d})^2}
+        \end{align*}
       \end{itemize}
     \end{column}
 
@@ -674,13 +637,7 @@ $f_Y \sim GP(\mu_Y,\sigma_Y)$
         \draw[draw=none            ] (X2)    -- node [     ] { $\vdots$ } (Xm);
         \draw[draw=none            ] (Xm)    -- node [     ] { $\vdots$ } (XM);
       \end{tikzpicture}
-%
-%       \begin{minipage}{0.85\textwidth}
-%         \caption{
-%           A directed acyclic graph depicting a deep Gaussian process.
-%           Each arrow represents a multivariate Gaussian process.
-%         }
-%       \end{minipage}
+
       \label{fig:deepgp}
       \end{figure}
 
