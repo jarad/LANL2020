@@ -1,4 +1,4 @@
-\documentclass[10pt,handout,aspectratio=169]{beamer}
+\documentclass[10pt,aspectratio=169]{beamer}
 \usepackage{natbib}
 \usepackage{pdfpages}
 \usepackage{tikz}
@@ -96,8 +96,11 @@ set.seed(20200109)
 
 \end{frame}
 
-\section{C-CHANGE}
 
+
+
+
+\section{C-CHANGE}
 \begin{frame}
 \frametitle{C-CHANGE: Science for a changing agriculture}
 \setkeys{Gin}{width=0.35\textwidth}
@@ -114,6 +117,8 @@ set.seed(20200109)
 \end{frame}
 
 
+\section{Effects of agriculture}
+\subsection{Production}
 \begin{frame}
 \frametitle{Iowa Agricultural Production}
 
@@ -152,6 +157,41 @@ second in soybeans and red meat production.
 \end{frame}
 
 
+\subsection{Loss of prairie}
+\begin{frame}
+\frametitle{Loss of prairie}
+
+85\% of Iowa was covered with prairie; \uncover<2->{today less than 0.1\% remains}
+
+\vspace{0.2in}
+
+\includegraphics[width = 0.5\textwidth]{prairie}
+\hspace{0.2in} \pause
+\includegraphics[width = 0.42\textwidth]{soybean_rows}
+
+{\tiny
+\url{https://www.facebook.com/NealSmithNWR/photos/a.363116150433606/3093501587395035}
+\url{https://dissolve.com/stock-photo/field-young-soybean-plants-showing-corn-stalks-residue-royalty-free-image/101-D869-14-341}
+}
+\end{frame}
+
+\subsection{Soil loss}
+\begin{frame}
+\frametitle{Soil loss}
+
+Iowa loses \$1,000,000,000/year in soil
+
+\vspace{0.2in}
+
+\includegraphics[width=0.7\textwidth]{soil_loss}
+
+{\tiny
+\url{https://www.desmoinesregister.com/story/money/agriculture/2014/05/03/erosion-estimated-cost-iowa-billion-yield/8682651/}
+}
+
+\end{frame}
+
+
 
 \subsection{Dead zone}
 \begin{frame}
@@ -176,6 +216,34 @@ second in soybeans and red meat production.
 
 \end{frame}
 
+
+\subsection{E. coli}
+\begin{frame}
+\frametitle{Tedesco Environmental Learning Corridor}
+
+\includegraphics[width = 0.33\textwidth]{tedesco_map}
+\hspace{0.2in}
+\includegraphics[width = 0.63\textwidth]{tedesco}
+
+{\tiny
+\url{https://www.storycountyiowa.gov/1369/Tedesco-Environmental-Learning-Corridor}
+
+}
+
+\end{frame}
+
+
+\subsection{Manure lagoons}
+\begin{frame}
+\frametitle{Manure lagoons}
+
+\includegraphics[width=0.6\textwidth]{manure_lagoons}
+
+{\tiny
+\url{https://www.npr.org/2018/09/22/650698240/hurricane-s-aftermath-floods-hog-lagoons-in-north-carolina}
+}
+
+\end{frame}
 
 
 
@@ -214,9 +282,11 @@ second in soybeans and red meat production.
 
 \begin{frame}
 \frametitle{Prairie STRIPS results}
-\setkeys{Gin}{width=0.45\textwidth}
+\setkeys{Gin}{width=0.4\textwidth}
 
 \includegraphics{prairie_strips_results}
+\hspace{0.5in} \pause
+\includegraphics{prairie_strips_results2}
 
 \url{https://www.pnas.org/content/114/42/11247/tab-figures-data}
 
@@ -225,18 +295,9 @@ second in soybeans and red meat production.
 
 
 
-
-% \subsection{Biogas production}
-%
-% \begin{frame}
-%   \frametitle{USDA NIFA - Biogas production}
-% \end{frame}
-
-
-
-\section{USDA NIFA CAP}
+\section{USDA NIFA}
 \begin{frame}
-\frametitle{USDA NIFA CAP}
+\frametitle{USDA NIFA - Biogas production from manure and herbaceous biomass}
 \setkeys{Gin}{width=0.8\textwidth}
 
 \includegraphics{usda_nifa}
